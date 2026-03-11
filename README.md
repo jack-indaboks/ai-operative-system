@@ -1,4 +1,4 @@
-# Operative Ecosystem Documentation
+# AI Operative System Documentation
 
 This repository is the documentation home for the AI Operative ecosystem. It defines the core architectural principles, shared concepts, and organizational structure that guide the design and development of all operative layers, templates, and instances.
 
@@ -29,26 +29,26 @@ The ecosystem currently organizes around these layers of structure:
 ```mermaid
 flowchart TD
    subgraph ClassTemplates[Class Templates]
-      ILT[ILT<br>Identity-layer essence<br>and inheritance rules]
-      ALT[ALT<br>Self-edit governance,<br>authority, safety]
-      ELT[ELT<br>Abstract environment<br>integration model]
+      ILT["<b>Identity Layer Template</b><br>(ILT)<br>Identity-layer essence and inheritance rules"]
+      ALT["<b>Autonomy Layer Template</b><br>(ALT)<br>Self-edit governance, authority, safety"]
+      ELT["<b>Environment Layer Template</b><br>(ELT)<br>Abstract environment integration model"]
    end
 
    subgraph InstanceTemplates[Instance Templates]
-      PILT[PILT<br>Minimal structure and defaults<br>for a personal identity layer]
-      TILT[TILT<br>Minimal structure and defaults<br>for a team identity layer]
-      CELT[CELT<br>GitHub Copilot integration utilities and minimal defaults]
+      PILT["<b>Personal Identity Layer Template</b><br>(PILT)<br>Minimal structure and defaults for a personal identity layer"]
+      TILT["<b>Team Identity Layer Template</b><br>(TILT)<br>Minimal structure and defaults for a team identity layer"]
+      CELT["<b>Copilot Environment Layer Template</b><br>(CELT)<br>GitHub Copilot integration utilities and minimal defaults"]
    end
 
    subgraph LayerRepos[Layer Repositories]
-      PIL[Personal Identity Layer<br>Identity and knowledge<br>for one person's operative]
-      TIL[Team Identity Layer<br>Identity and knowledge<br>for a team's operative]
-      ELR[Environment Layer<br>Specific platform tooling and integration surfaces]
-      ALR[Autonomy Layer<br>Concrete self-edit boundaries]
+      PIL["<b>Personal Identity Layer</b><br>Identity and knowledge for one person's operative"]
+      TIL["<b>Team Identity Layer</b><br>Identity and knowledge for a team's operative"]
+      ELR["<b>Environment Layer</b><br>Specific platform tooling and integration surfaces"]
+      ALR["<b>Autonomy Layer</b><br>Concrete self-edit boundaries"]
    end
 
    subgraph OperativeLayer[Operative]
-      OP[Operative<br>Runtime composition of one or more layers]
+      OP["<b>Operative</b><br>Runtime composition of one or more layers"]
    end
 
    ILT -->|inherits into| PILT
