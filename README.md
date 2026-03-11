@@ -2,7 +2,7 @@
 
 This repository is the documentation home for the AI Operative ecosystem. It defines the core architectural principles, shared concepts, and organizational structure that guide the design and development of all operative layers, templates, and instances.
 
-## Current System Shape
+## System Structure
 
 The ecosystem currently organizes around these layers of structure:
 
@@ -68,7 +68,7 @@ flowchart TD
 
 `ALT` currently routes directly into concrete autonomy layers because no useful autonomy instance-template split has been identified yet. `ELT` remains abstract for now, with `CELT` as its first concrete environment-template line.
 
-## Core Architectural Principles
+## Architectural Principles
 
 - The repository is the master. Live instances are disposable projections of repo-owned truth.
 - Operative layers are portable, repo-sovereign, instance-symmetric identity modules.
