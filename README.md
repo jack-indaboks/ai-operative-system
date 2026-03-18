@@ -1,76 +1,45 @@
 # AI Operative System Documentation
 
-This repository is the documentation home for the AI Operative ecosystem. It defines the core architectural principles, shared concepts, and organizational structure that guide the design and development of all operative layers, templates, and instances.
+The AI Operative ecosystem is a framework for building reusable AI identities, governance layers, and platform integrations as repository-owned components rather than one-off prompt fragments. Its central idea is simple: layers define Operatives, and an Operative can be composed from one or more layers without turning those layers into disposable runtime state.
 
-## System Structure
+This repository is the documentation for that system. It explains what the ecosystem is, where it is headed, and how the current rebuild is organized.
 
-The ecosystem currently organizes around these layers of structure:
+## What the Ecosystem Is
 
-1. Class Templates
-   - `ILT`: What is the essence of an Identity Layer?
-   - `ALT`: What governance must be considered when allowing an Operative to modify itself?
-   - `ELT`: What must be considered when integrating an Operative into a particular platform?
+At a high level, the ecosystem separates three kinds of concerns:
 
-2. Instance Templates
-   - `PILT` / `TILT`: What minimum defaults define a Personal / Team Identity Layer?
-   - `CELT`: What does an Operative need to integrate seamlessly into GitHub Copilot?
+1. Identity & Governance
+   Personal and team identity layers define voice, values, context, and enduring working style.
+2. Self-Maintenance
+   Autonomy layers define whether and how an Operative is allowed to modify its own operative files.
+3. Environment Integration
+   Environment layers define how an Operative is embodied in a specific platform such as GitHub Copilot.
 
-3. Layer Repositories
-   - Personal Identity Layer: Who is this specific personal identity layer and what does it always know?
-   - Team Identity Layer: Who is this specific team identity layer and what does it always know?
-   - Environment Layer: What platform-specific tooling does this individual or team provide for their Operatives?
-   - Autonomy Layer: What boundaries does this individual or team impose around self-editing?
+Those concerns are being formalized into a layered template system so Operatives can be composed deliberately, maintained in version control, and deployed across multiple runtimes without collapsing everything into one giant prompt.
 
-4. Operatives
-   - Runtime compositions of layer repositories within a specific platform context and the embodied instance of that composition in a host platform.
+## Current State
 
-## Template Tree
+The ecosystem is in an active structural rebuild. The public documentation set is in place, the high-level architecture is defined, and the next major work is focused on building the shared template and environment lines that will make the system practical to use and maintain.
 
-```mermaid
-flowchart TD
-   subgraph ClassTemplates[Class Templates]
-      ILT["<b>Identity Layer Template</b><br>(ILT)<br>Identity-layer essence and inheritance rules"]
-      ALT["<b>Autonomy Layer Template</b><br>(ALT)<br>Self-edit governance, authority, safety"]
-      ELT["<b>Environment Layer Template</b><br>(ELT)<br>Abstract environment integration model"]
-   end
+The active public repository surfaces in ecosystem scope are:
 
-   subgraph InstanceTemplates[Instance Templates]
-      PILT["<b>Personal Identity Layer Template</b><br>(PILT)<br>Minimal structure and defaults for a personal identity layer"]
-      TILT["<b>Team Identity Layer Template</b><br>(TILT)<br>Minimal structure and defaults for a team identity layer"]
-      CELT["<b>Copilot Environment Layer Template</b><br>(CELT)<br>GitHub Copilot integration utilities and minimal defaults"]
-   end
+1. Documentation
+   `ai-operative-system`
+2. Layer Templates
+   `ALT`
+   `TILT`
+   `PILT`
+   `CELT`
+3. Abstract Templates (not for direct use)
+   `ILT`
+   `ELT` (planned)
 
-   subgraph LayerRepos[Layer Repositories]
-      PIL["<b>Personal Identity Layer</b><br>Identity and knowledge for one person's operative"]
-      TIL["<b>Team Identity Layer</b><br>Identity and knowledge for a team's operative"]
-      ELR["<b>Environment Layer</b><br>Specific platform tooling and integration surfaces"]
-      ALR["<b>Autonomy Layer</b><br>Concrete self-edit boundaries"]
-   end
+In current terms, this means the ecosystem already has a durable public architecture and roadmap, but the implementation work to realize that architecture is still underway.
 
-   subgraph OperativeLayer[Operative]
-      OP["<b>Operative</b><br>Runtime composition of one or more layers"]
-   end
+## Documents
 
-   ILT -->|inherits into| PILT
-   ILT -->|inherits into| TILT
-   ALT -->|instantiates into| ALR
-   ELT -->|inherits into| CELT
-
-   PILT -->|instantiates into| PIL
-   TILT -->|instantiates into| TIL
-   CELT -->|instantiates into| ELR
-
-   PIL -->|may compose into| OP
-   TIL -->|may compose into| OP
-   ELR -->|may compose into| OP
-   ALR -->|may compose into| OP
-```
-
-`ALT` currently routes directly into concrete autonomy layers because no useful autonomy instance-template split has been identified yet. `ELT` remains abstract for now, with `CELT` as its first concrete environment-template line.
-
-## Architectural Principles
-
-- The repository is the master. Live instances are disposable projections of repo-owned truth.
-- Operative layers are portable, repo-sovereign, instance-symmetric identity modules.
-- Persistent behavior belongs in git, even when it is platform-specific.
-- Generated artifacts are projections of canon, not silent replacements for canon.
+- `README.md`: current state and navigation surface
+- `ARCHITECTURE.md`: the end-state model for the ecosystem, its layers, and their relationships
+- `ROADMAP.md`: the live public milestone map for the rebuild
+- `CHANGELOG.md`: major completed documentation and architecture changes
+- `DOCS.md`: maintainer-facing rules for how this public docs set is managed
