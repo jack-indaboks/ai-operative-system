@@ -60,4 +60,8 @@
 - Refined `DOCS.md` into a repository-specific documentation specification for the public ecosystem docs set.
 - Expanded `README.md` into a fuller ecosystem entry point that explains both the system vision and the current rebuild state.
 - Clarified the operative composition model so loaded layers are documented as a single internalized identity rather than as a stack of personas.
-- Realigned `ARCHITECTURE.md` and its diagram around abstract templates versus directly usable layer templates, including the current `ALT` positioning.
+- Realigned `ARCHITECTURE.md` and its diagram around abstract templates versus directly usable layer templates, including the current `ALT` positioning. *Commit 44d1263: Documentation Launch*
+
+## 2026-03-26
+
+- Clarified `ARCHITECTURE.md` around protected standalone-layer plumbing, renamed the shared `CORE` spine to `Operative Layer Protocol`, and introduced `OLT` as the directly usable operations-layer template with `ILT`/`OLT`/`CELT` boundaries tightened accordingly.
