@@ -65,3 +65,8 @@
 ## 2026-03-26
 
 - Clarified `ARCHITECTURE.md` around protected standalone-layer plumbing, renamed the shared `CORE` spine to `Operative Layer Protocol`, and introduced `OLT` as the directly usable operations-layer template with `ILT`/`OLT`/`CELT` boundaries tightened accordingly.
+
+## 2026-03-27
+
+- Introduced the Operative Kernel as the universal operative baseline and reframed the public architecture around assembled Operative repos built from kernel plus selected upstream layers. *Commit 26b0f92: Kernel*
+- Removed `ALT` from the public architecture, introduced target-local `EDITING_<Repo>.md` governance for editable source repos, and realigned the public docs to the kernel-plus-Operative model.

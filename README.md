@@ -1,6 +1,6 @@
 # AI Operative System Documentation
 
-The AI Operative ecosystem is a framework for building reusable AI identities, governance layers, and platform integrations as repository-owned components rather than one-off prompt fragments. Its central idea is simple: layers define Operatives, and an Operative can be composed from one or more layers without turning those layers into disposable runtime state.
+The AI Operative ecosystem is a framework for building reusable AI identities, procedural layers, and platform integrations as repository-owned components rather than one-off prompt fragments. Its central idea is simple: an Operative begins from a shared kernel baseline, grows through selected layers, and remains grounded in durable source repositories rather than disposable runtime state.
 
 This repository is the documentation for that system. It explains what the ecosystem is, where it is headed, and how the current rebuild is organized.
 
@@ -8,10 +8,10 @@ This repository is the documentation for that system. It explains what the ecosy
 
 At a high level, the ecosystem separates three kinds of concerns:
 
-1. Identity & Governance
-   Personal and team identity layers define voice, values, context, and enduring working style.
-2. Self-Maintenance
-   Autonomy layers define whether and how an Operative is allowed to modify its own operative files.
+1. Operative Baseline & Assembly
+   The kernel defines the universal operative starting state, and assembly workflows combine that baseline with selected upstream layers into one durable Operative repo.
+2. Identity & Procedure
+   Identity layers define voice, values, context, and enduring working style, while operations layers provide reusable procedures that are not inseparable from identity.
 3. Environment Integration
    Environment layers define how an Operative is embodied in a specific platform such as GitHub Copilot.
 
@@ -19,22 +19,9 @@ Those concerns are being formalized into a layered template system so Operatives
 
 ## Current State
 
-The ecosystem is in an active structural rebuild. The public documentation set is in place, the high-level architecture is defined, and the next major work is focused on building the shared template and environment lines that will make the system practical to use and maintain.
+The ecosystem is in an active structural rebuild. The public documentation set is in place, the high-level architecture is defined, and the next major work is focused on building the shared kernel, template, and environment lines that make that architecture practical to use and maintain.
 
-The active public repository surfaces in ecosystem scope are:
-
-1. Documentation
-   `ai-operative-system`
-2. Layer Templates
-   `ALT`
-   `TILT`
-   `PILT`
-   `CELT`
-3. Abstract Templates (not for direct use)
-   `ILT`
-   `ELT` (planned)
-
-In current terms, this means the ecosystem already has a durable public architecture and roadmap, but the implementation work to realize that architecture is still underway.
+In current terms, this means the ecosystem already has a durable public architecture centered on the Operative Kernel, assembled Operative repos, and preserved upstream layer sources, while the implementation work to realize `OK`, `OLT`, `ILT`, `CELT`, `TILT`, and `PILT` is still underway.
 
 ## Documents
 
