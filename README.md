@@ -1,6 +1,6 @@
 # AI Operative System Documentation
 
-The AI Operative ecosystem is a framework for building reusable AI identities, procedural layers, and platform integrations as repository-owned components rather than one-off prompt fragments. Its central idea is simple: an Operative begins from a shared kernel baseline, grows through selected layers, and remains grounded in durable source repositories rather than disposable runtime state.
+The AI Operative ecosystem is a framework for building reusable AI identities, procedural layers, and platform integrations as repository-owned components rather than one-off prompt fragments. Its central idea is simple: an Operative begins as an instance of the shared kernel, grows through selected layers, and remains grounded in durable source repositories rather than disposable runtime state.
 
 This repository is the documentation for that system. It explains what the ecosystem is, where it is headed, and how the current rebuild is organized.
 
@@ -9,7 +9,7 @@ This repository is the documentation for that system. It explains what the ecosy
 At a high level, the ecosystem separates three kinds of concerns:
 
 1. Operative Baseline & Assembly
-   The kernel defines the universal operative starting state, and assembly workflows combine that baseline with selected upstream layers into one durable Operative repo.
+   The kernel defines the universal operative baseline, and assembly workflows extend that baseline with selected upstream layers into one durable Operative repo.
 2. Identity & Procedure
    Identity layers define voice, values, context, and enduring working style, while operations layers provide reusable procedures that are not inseparable from identity.
 3. Environment Integration

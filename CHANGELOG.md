@@ -69,4 +69,11 @@
 ## 2026-03-27
 
 - Introduced the Operative Kernel as the universal operative baseline and reframed the public architecture around assembled Operative repos built from kernel plus selected upstream layers. *Commit 26b0f92: Kernel*
-- Removed `ALT` from the public architecture, introduced target-local `EDITING_<Repo>.md` governance for editable source repos, and realigned the public docs to the kernel-plus-Operative model.
+- Removed `ALT` from the public architecture, introduced target-local `EDITING_<Repo>.md` governance for editable source repos, and realigned the public docs to the kernel-plus-Operative model. *Commit 603e48c: Ready for Implementation*
+
+**0.0.2**
+
+## 2026-04-02
+
+- Clarified `ARCHITECTURE.md` around `PROTOCOL` as the ecosystem-defining protected file, the rest of the kernel file family as required implementation surfaces, and operative files as the canon that defines an Operative.
+- **operative-kernel**: Reworked `00_PROTOCOL.md` into a compact operative-facing protocol block with a stable assembled-artifact skeleton (`Assembled Identity`, `Operative File Index`). *Commit 383f526: PROTOCOL*
