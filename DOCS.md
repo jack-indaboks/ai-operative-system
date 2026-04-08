@@ -35,6 +35,7 @@ This document defines the roles of the core project documents and the rules for 
 ## Changelog Rules
 
 - `CHANGELOG.md` is append-only.
+- Exception: the most recent changelog line may be amended to append its commit trailer after the commit hash exists.
 - `CHANGELOG.md` is ordered oldest-first.
 - Changelog entries describe public-facing outcomes, not private working detail.
 - Backfilled history may be summarized into larger date-grouped bullets when needed.

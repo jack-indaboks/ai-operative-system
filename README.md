@@ -1,27 +1,27 @@
 # AI Operative System Documentation
 
-The AI Operative ecosystem is a framework for building reusable AI identities, procedural layers, and platform integrations as repository-owned components rather than one-off prompt fragments. Its central idea is simple: an Operative begins as an instance of the shared kernel, grows through selected layers, and remains grounded in durable source repositories rather than disposable runtime state.
+The AI Operative ecosystem is a system for building durable AI operatives from reusable sources. Instead of treating prompts, instructions, and environment-specific integration as disposable runtime fragments, it defines them as maintained sources with clear roles and update paths.
 
-This repository is the documentation for that system. It explains what the ecosystem is, where it is headed, and how the current rebuild is organized.
+An Operative begins from the shared kernel, composes selected identity and operations layers into one coherent operative canon, and can then be embodied in specific host environments. This repository documents that model and tracks the work of building it out.
 
 ## What the Ecosystem Is
 
 At a high level, the ecosystem separates three kinds of concerns:
 
-1. Operative Baseline & Assembly
-   The kernel defines the universal operative baseline, and assembly workflows extend that baseline with selected upstream layers into one durable Operative repo.
-2. Identity & Procedure
-   Identity layers define voice, values, context, and enduring working style, while operations layers provide reusable procedures that are not inseparable from identity.
-3. Environment Integration
-   Environment layers define how an Operative is embodied in a specific platform such as GitHub Copilot.
+1. Operative Baseline
+   The kernel defines the shared baseline and protected contract every Operative begins from.
+2. Layer Families
+   Identity, operations, and environment layers contribute distinct kinds of canon to the system.
+3. Operative Composition And Embodiment
+   Operatives compose selected layer canon into one durable system and may then be embodied across specific host environments.
 
-Those concerns are being formalized into a layered template system so Operatives can be composed deliberately, maintained in version control, and deployed across multiple runtimes without collapsing everything into one giant prompt.
+This architecture makes Operatives composable, governable, and maintainable across repositories instead of collapsing everything into one monolithic prompt surface.
 
 ## Current State
 
-The ecosystem is in an active structural rebuild. The public documentation set is in place, the high-level architecture is defined, and the next major work is focused on building the shared kernel, template, and environment lines that make that architecture practical to use and maintain.
+The public architecture is established. The implementation work now underway is building the shared kernel, template lines, and environment surfaces that realize it as a working ecosystem.
 
-In current terms, this means the ecosystem already has a durable public architecture centered on the Operative Kernel, assembled Operative repos, and preserved upstream layer sources, while the implementation work to realize `OK`, `OLT`, `ILT`, `CELT`, `TILT`, and `PILT` is still underway.
+Today, that means the ecosystem has a stable architectural model and an active buildout focused on turning `OK`, `OLT`, `BOLT`, `ILT`, `CELT`, `TILT`, and `PILT` into concrete templates and maintained source repositories.
 
 ## Documents
 

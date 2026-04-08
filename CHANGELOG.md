@@ -75,5 +75,9 @@
 
 ## 2026-04-02
 
-- Clarified `ARCHITECTURE.md` around `PROTOCOL` as the ecosystem-defining protected file, the rest of the kernel file family as required implementation surfaces, and operative files as the canon that defines an Operative.
+- Clarified `ARCHITECTURE.md` around `PROTOCOL` as the ecosystem-defining protected file, the rest of the kernel file family as required implementation surfaces, and operative files as the canon that defines an Operative. *Commit ce46403: PROTOCOL*
 - **operative-kernel**: Reworked `00_PROTOCOL.md` into a compact operative-facing protocol block with a stable assembled-artifact skeleton (`Assembled Identity`, `Operative File Index`). *Commit 383f526: PROTOCOL*
+
+## 2026-04-07
+
+- Reorganized `ARCHITECTURE.md` around the clarified ecosystem architecture, defining the `Templates`/`Layers`/`Operatives` hierarchy, narrowing the kernel to an immutable-by-default baseline, introducing `BOLT` as the maintainer-focused `OLT` line, and clarifying environment layers as host-native embodiment surfaces for platform-agnostic Operatives.
