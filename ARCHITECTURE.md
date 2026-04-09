@@ -10,6 +10,8 @@ The ecosystem is organized around three primary categories: Templates, Layers, a
 - Layers are concrete canonical sources instantiated from templates.
 - Operatives are durable systems instantiated from the kernel and composed from selected layers.
 
+Templates are scaffolding for building layers. Operatives are assembled by attaching layers to a kernel.
+
 Within that hierarchy, the kernel is the template for an Operative. Other top-level templates define layer families. Templates instantiate into Layers, except for the kernel, which instantiates into Operatives. Layers then compose into Operatives. Runtime instances are embodiments of an Operative in a host system, not a separate primary architecture category.
 
 ### System Diagram
@@ -25,7 +27,7 @@ flowchart TD
    end
 
    subgraph DerivedTemplates[Derived Templates]
-      BOLT["<b>Build&nbsp;Operations&nbsp;Layer&nbsp;Template</b><br>(BOLT)<br>Maintainer-focused operative build/edit workflows"]
+      BOLT["<b>Build&nbsp;Operations&nbsp;Layer&nbsp;Template</b><br>(BOLT)<br>Maintainer-focused layer editing workflows"]
       PILT["<b>Personal&nbsp;Identity&nbsp;Layer&nbsp;Template</b><br>(PILT)<br>Minimal structure and defaults for a personal identity layer"]
       TILT["<b>Team&nbsp;Identity&nbsp;Layer&nbsp;Template</b><br>(TILT)<br>Minimal structure and defaults for a team identity layer"]
       CELT["<b>Copilot&nbsp;Environment&nbsp;Layer&nbsp;Template</b><br>(CELT)<br>GitHub Copilot integration utilities and minimal defaults"]
@@ -36,7 +38,7 @@ flowchart TD
       TIL["<b>Team Identity Layer Repo</b><br>Identity and knowledge for a team's operative"]
       PIL["<b>Personal Identity Layer Repo</b><br>Identity and knowledge for one person's operative"]
       ELR["<b>Environment Layer Repo</b><br>Specific platform tooling and integration surfaces"]
-      BOR["<b>Build Operations Layer Repo</b><br>Maintainer-focused operative build and maintenance workflows"]
+      BOR["<b>Build Operations Layer Repo</b><br>Maintainer-focused layer authoring and maintenance workflows"]
       OPR["<b>Operations Layer Repo</b><br>Reusable procedures and tasks"]
    end
 
@@ -45,7 +47,7 @@ flowchart TD
    end
 
    subgraph RuntimeLayer[Runtime Instances]
-      OP["<b>Runtime Instance</b><br>Embodied operative in a host platform"]
+      OP["<b>Runtime Instance</b><br>Live-source or generated operative in a host platform"]
    end
 
    OK -->|instantiates into| KRR
@@ -65,9 +67,8 @@ flowchart TD
    PIL -->|may feed| OPRT
    TIL -->|may feed| OPRT
    OPR -->|may feed| OPRT
+   OPRT -->|may embody as live-source or compile into generated form| OP
    ELR -->|may embody with| OP
-
-   OPRT -->|embodies as| OP
 ```
 
 ## Template Families
@@ -92,7 +93,7 @@ At the source level, the kernel provides the required operative file family: the
 
 `OLT` defines the shared shape of operations layers. Operations layers provide reusable procedures and task-routing canon that an Operative can invoke without treating those procedures as part of its identity.
 
-`BOLT` is an `OLT`-derived line for maintainer-focused workflows. It carries the procedures and governance that allow an Operative to build, maintain, and edit operative canon under explicit authority.
+`BOLT` is an `OLT`-derived line for maintainer-focused workflows. It carries the procedures and governance that allow an Operative to edit upstream layer canon under explicit authority.
 
 ### Environment Layer Family
 
@@ -110,7 +111,11 @@ An Operative is defined by its operative files: the files surfaced through its o
 
 When directive conflicts arise between operative files and non-operative files, operative files win.
 
-The default deployed unit is an Operative repo, not a loose workspace of sibling layer repositories. Included source-bearing layer repositories remain distinct repos inside the Operative through pinned submodules. `ASSEMBLY` is the canonical declarative record of which sources are included, how they relate, and how the resulting Operative should be built.
+At the source level, the maintained unit is an Operative repo. Included layers remain distinct repos inside the Operative through pinned submodules. `ASSEMBLY` is the canonical declarative record of which sources are included, how they relate, and how the resulting Operative should be assembled.
+
+At runtime, an Operative may appear in two forms. A live-source Operative remains paired with its source repo and can maintain its own operative-local canon under kernel defaults. A generated Operative is a read-only runtime produced from prebuilt artifacts. In that form, the deployed unit need not include the full Operative repo, pinned upstream layer repos, or `ASSEMBLY`; it only needs the runtime-facing artifacts required by the target environment.
+
+Because live-source Operatives depend on directory-bearing git repositories and pinned submodule inclusion, they require a directory-bearing, git-capable environment. Platforms without directory structure support therefore host generated Operatives rather than live-source ones.
 
 An Operative may include multiple operations layers when needed, provided their routing preserves provenance explicitly through namespaces or equivalent mechanisms.
 
@@ -132,9 +137,11 @@ Because environment layers are authored in host-native layouts, they are not tre
 
 ### Governed Editing And Maintenance
 
-Operative files are immutable canon by default. The kernel defines the universal baseline and assembly plumbing for an Operative, but it does not by itself grant general authority to edit operative canon.
+The kernel provides the default governance for maintaining an Operative's own local operative canon. That local surface includes files such as `ASSEMBLY` that record composition and deployment decisions for the Operative itself.
 
-Governed editing exists only when a loaded layer explicitly authorizes it and supplies the requisite governance. `BOLT` is the maintainer-focused operations-layer line for that capability. A `BOLT`-enabled Operative may carry `EDITING_<Repo>.md` files in the Operative root, with each file governing edits to its corresponding authorized target repo or layer.
+Included layer repos remain canonical upstream sources. Editing those layer files is a separate capability, not part of the kernel's default local-maintenance baseline.
+
+Layer editing exists only when a loaded layer explicitly authorizes it and supplies the requisite governance. `BOLT` is the maintainer-focused operations-layer line for that capability. A `BOLT`-enabled Operative may carry `EDITING_<Repo>.md` files in the Operative root, with each file governing edits to its corresponding authorized target repo or layer.
 
 In multi-target workflows, those governance files apply per target. Each authorized repo or layer is governed by its own `EDITING_<Repo>.md` without bleeding rules across other targets.
 

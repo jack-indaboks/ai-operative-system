@@ -80,4 +80,9 @@
 
 ## 2026-04-07
 
-- Reorganized `ARCHITECTURE.md` around the clarified ecosystem architecture, defining the `Templates`/`Layers`/`Operatives` hierarchy, narrowing the kernel to an immutable-by-default baseline, introducing `BOLT` as the maintainer-focused `OLT` line, and clarifying environment layers as host-native embodiment surfaces for platform-agnostic Operatives.
+- Reorganized `ARCHITECTURE.md` around the clarified ecosystem architecture, defining the `Templates`/`Layers`/`Operatives` hierarchy, narrowing the kernel to an immutable-by-default baseline, introducing `BOLT` as the maintainer-focused `OLT` line, and clarifying environment layers as host-native embodiment surfaces for platform-agnostic Operatives. *Commit 95feefb: ARCHITECTURE clean-up + BOLT*
+
+## 2026-04-09
+
+- **operative-kernel**: Clarified the kernel protocol and governance baseline so operative-local canon remains maintainable under kernel defaults while included layer repos stay read-only unless a more specific layer-governance source authorizes edits. *Commit a95f64b: assemble vs build*
+- Clarified the public architecture around assemble-versus-build terminology, narrowed `BOLT` to upstream layer editing, distinguished live-source versus generated runtime forms, and made explicit that live-source Operatives require a directory-bearing, git-capable environment. *Commit 1f36a99: assemble vs build*

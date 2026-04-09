@@ -1,6 +1,6 @@
 # AI Operative System Documentation
 
-The AI Operative ecosystem is a system for building durable AI operatives from reusable sources. Instead of treating prompts, instructions, and environment-specific integration as disposable runtime fragments, it defines them as maintained sources with clear roles and update paths.
+The AI Operative ecosystem is a system for assembling durable AI Operatives from reusable layers. Instead of treating prompts, instructions, and environment-specific integration as disposable runtime fragments, it defines them as maintained sources with clear roles and update paths.
 
 An Operative begins from the shared kernel, composes selected identity and operations layers into one coherent operative canon, and can then be embodied in specific host environments. This repository documents that model and tracks the work of building it out.
 
