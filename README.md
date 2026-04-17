@@ -1,3 +1,9 @@
+> [!NOTE]
+> Archived legacy documentation surface.
+> This repository documents the earlier cross-platform AI Operative System architecture.
+> Active documentation has moved to the successor repository `ai-operative-model`.
+> Treat this file and the rest of this repository as historical reference only unless a migration task explicitly says otherwise.
+
 # AI Operative System Documentation
 
 The AI Operative ecosystem is a system for assembling durable AI Operatives from reusable layers. Instead of treating prompts, instructions, and environment-specific integration as disposable runtime fragments, it defines them as maintained sources with clear roles and update paths.

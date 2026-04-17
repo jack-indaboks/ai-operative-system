@@ -149,7 +149,7 @@ When an Operative has edit access to a constituent layer, it edits that layer in
 
 ### Update Handling
 
-Operatives include layers as canonical upstream sources, so upstream and downstream evolution remains explicit. Upstream changes are reviewed through `curate-updates` rather than consumed through blind pulls or mandatory synchronization.
+Operatives include layers as canonical upstream sources, so upstream and downstream evolution remains explicit. Upstream changes are reviewed through AI operative workflows rather than consumed through blind pulls or mandatory synchronization.
 
 The canonical downstream disposition states are `Included`, `Excluded`, and `Deferred`. Repositories that expect selective downstream consumption should publish `09_CHANGELOG_*` as an update ledger designed for that workflow, with enough context for a maintainer to decide whether and how to advance downstream canon.
 

@@ -85,4 +85,4 @@
 ## 2026-04-09
 
 - **operative-kernel**: Clarified the kernel protocol and governance baseline so operative-local canon remains maintainable under kernel defaults while included layer repos stay read-only unless a more specific layer-governance source authorizes edits. *Commit a95f64b: assemble vs build*
-- Clarified the public architecture around assemble-versus-build terminology, narrowed `BOLT` to upstream layer editing, distinguished live-source versus generated runtime forms, and made explicit that live-source Operatives require a directory-bearing, git-capable environment. *Commit 1f36a99: assemble vs build*
+- Clarified the public architecture around assemble-versus-build terminology, narrowed `BOLT` to upstream layer editing, distinguished live-source versus generated runtime forms, and made explicit that live-source Operatives require a directory-bearing, git-capable environment. *Commit ea7d0e8: assemble vs build*
